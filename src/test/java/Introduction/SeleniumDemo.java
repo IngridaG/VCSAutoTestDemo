@@ -23,9 +23,9 @@ public class SeleniumDemo {
 
 
     @Test
-    public void testDemoWedDriver() {
-        // is klases issikvieciam metoda
-        WebDriverManager.chromedriver().setup();        // webdrivers reikalingas susetapinti manageri
+    public void testDemoWedDriver() {                       // testas skirtas atidaryti ir uzdaryti psl.
+                                                             // is klases issikvieciam metoda
+        WebDriverManager.chromedriver().setup();        // webdrivers reikalingas susetapinti manageri Chromas
         WebDriver driver = new ChromeDriver();          // kuriam driveri
         driver.get("https://www.vilniuscoding.lt/");         // paleidziame si inernet psl. su get metodu
 
