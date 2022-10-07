@@ -18,7 +18,7 @@ public class Demo {
         actualResults = actualInput % 2;
 
 // palyginimas
-        Assert.assertEquals(actualResults, expectedResults);   //buins assert turti kikvieno testo gale
+        Assert.assertEquals(actualResults, expectedResults);   //butina assert tureti kiekvieno testo gale
 
     }
 
@@ -51,7 +51,7 @@ public class Demo {
         //palyginimas
 
         Assert.assertFalse(
-                IsSameTime,
+                isSameTime,
                 String.format("Expected: %s, Actual: %s", notExpectedTime, actualTime)
         );
 
