@@ -10,11 +10,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SeleniumDemo2 {
+public class SeleniumDemoSutrauktas {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod                               // komandoje zemiau esantis metodas bus atliktas pries kiekviena testa
     private void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -51,13 +51,14 @@ public class SeleniumDemo2 {
     }
 
     @Test
-    public void testClickKontaktaiOfVcsWebPageWithSmallWindow(){
+    public void testClickKontaktaiOfVcsWebPageWithSmallWindow(){            // tikrinamas "mazo" scrreeno veikimas per hambuerger meniu
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("window-size=600,3000");
         options.addArguments("--start-in-incognito");
 
-        driver = new ChromeDriver(options);
+
+        driver = new ChromeDriver(options);                             // // options pasirinktus auksciau paduodam i drveri
         driver.get("https://www.vilniuscoding.lt/");
 
         try {
@@ -77,7 +78,7 @@ public class SeleniumDemo2 {
         driver.quit();
     }
 
-    @AfterMethod
+    @AfterMethod                                        // po kiekveino metodo turi pasikartoti - t.y. uzdaryti svetaines langa
     private void close(){
         driver.quit();
     }
