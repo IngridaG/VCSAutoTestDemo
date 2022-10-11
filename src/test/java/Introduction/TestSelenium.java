@@ -24,14 +24,14 @@ public class TestSelenium {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("window-size=2000,3000");
         options.addArguments("--force-device-scale-factor=0.75");
-        options.addArguments("headless");   // kad testas vyktu backgrounde, neatidarytu narsykles - MAN VEIKIA SU SIUO METODU ENALBED
+//        options.addArguments("headless");   // kad testas vyktu backgrounde, neatidarytu narsykles - MAN VEIKIA SU SIUO METODU ENALBED
 
         driver = new ChromeDriver(options);
         driver.get("https://demoqa.com/text-box");
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));    // vykdys testa tol, kol viska uzkraus
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));    // vykdys testa tol, kol viska uzkraus
     }
 
-    @Test
+        @Test
     private void testInputFullName() {
         String expectedFullName = "Ingrida Gurskyte";
         String actualFullName;
@@ -60,7 +60,7 @@ public class TestSelenium {
         );
     }
     @Test
-    private void testInputEmail(){
+    private void testInputEmail() {
         String expectedEmail = "ingrida.gurskyte@gmail.com";
         String actualEmail;
         WebElement inputEmail =
@@ -82,14 +82,15 @@ public class TestSelenium {
                 )
         );
     }
-// //*[@id='currentAddress']
+
+    // //*[@id='currentAddress']
     @Test
-    private void testInputCurrentAddress(){
+    private void testInputCurrentAddress() {
         String expectedCurrentAddress = "Gedimino pilis";
         String actualCurrentAddress;
 
         WebElement inputCurrentAddress =
-                driver.findElement(By.xpath("//*[@id='currentAddress']"));
+                driver.findElement(By.xpath("//textarea[@id='currentAddress']"));
         inputCurrentAddress.sendKeys(expectedCurrentAddress);
 
         WebElement buttonSubmit = driver.findElement(By.xpath("//*[@id='submit']"));
