@@ -2,20 +2,21 @@ package pom.pages.demoqa;
 
 import org.openqa.selenium.By;
 import pom.pages.Common;
+import pom.pages.Locators;
 
-public class TestBoxPage {
+public class TextBoxPage {
 
-    public static void setUp() {
-        Common.setUp();
-    }
+//    public static void setUp() {
+//        Common.setUpDriver();
+//    }
 
     public static void open(String url) {
         Common.openUrl(url);
     }
 
-    public static void close() {
-        Common.close();
-    }
+//    public static void close() {
+//        Common.closeDriver();
+//    }
 
     public static void sleep(int millis){
         Common.sleep(millis);
@@ -24,39 +25,39 @@ public class TestBoxPage {
     public static void enterFullName(String expectedFullName) {
         Common.sendKeysToElement(
                 expectedFullName,
-                By.xpath("//input[@id='userName']")
+                Locators.Demoqa.TextBox.inputFullName
         );
     }
     public static void clickButtonSubmit() {
         Common.clickElement(
-                By.xpath("//*[@id='submit']")
+                Locators.Demoqa.TextBox.buttonSubmit
         );
     }
     public static String readMessage() {
         return Common.getElementText(
-                By.xpath("//*[@id='name']")
+                Locators.Demoqa.TextBox.paragraphName
         );
     }
     public static void enterEmail(String expectedUserEmail) {
         Common.sendKeysToElement(
                 expectedUserEmail,
-                By.xpath("//input[@id='userEmail']")
+                Locators.Demoqa.TextBox.inputEmail
         );
     }
     public static String readEmail() {
         return Common.getElementText(
-                By.xpath("//*[@id='email']")
+                Locators.Demoqa.TextBox.readEmail
         );
     }
     public static void enterCurrentAddress(String expectedCurrentAddress) {
         Common.sendKeysToElement(
                 expectedCurrentAddress,
-                By.xpath("//textarea[@id='currentAddress']")
+                Locators.Demoqa.TextBox.enterCurrentaddress
         );
     }
     public static String readCurrentAddress() {
         return Common.getElementText(
-                By.xpath("//p[@id='currentAddress']")
+                Locators.Demoqa.TextBox.readCurrentAddress
         );
     }
 }

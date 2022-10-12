@@ -3,8 +3,7 @@ package pom.tests.demoqa;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pom.pages.demoqa.TestBoxPage;
-import pom.pages.seleniumEasy.FirstFormDemoPage;
+import pom.pages.demoqa.TextBoxPage;
 import pom.tests.TestBase;
 
 public class TextBoxTest extends TestBase {
@@ -13,17 +12,17 @@ public class TextBoxTest extends TestBase {
     @Override
     public void setUp() {
         super.setUp();
-        FirstFormDemoPage.open("https://demoqa.com/text-box");
+        TextBoxPage.open("https://demoqa.com/text-box");
     }
 
     @Test
     private void testInputFullName() {
         String expectedFullName = "Ingrida Gu";
         String actualFullName;
-        // TODO: wright all actions fro elements here
-        TestBoxPage.enterFullName(expectedFullName);
-        TestBoxPage.clickButtonSubmit();
-        actualFullName = TestBoxPage.readMessage();
+
+        TextBoxPage.enterFullName(expectedFullName);
+        TextBoxPage.clickButtonSubmit();
+        actualFullName = TextBoxPage.readMessage();
 
         Assert.assertTrue(
                 actualFullName.contains(expectedFullName),
@@ -40,11 +39,11 @@ public class TextBoxTest extends TestBase {
         String expectedUserEmail = "ingrida.gurskyte@gmail.com";
         String actualUserEmail;
 
-        TestBoxPage.enterEmail(expectedUserEmail);
-        TestBoxPage.clickButtonSubmit();
-        actualUserEmail = TestBoxPage.readEmail();
+        TextBoxPage.enterEmail(expectedUserEmail);
+        TextBoxPage.clickButtonSubmit();
+        actualUserEmail = TextBoxPage.readEmail();
 
-        // TODO: wright all actions fro elements here
+
         Assert.assertTrue(
                 actualUserEmail.contains(expectedUserEmail),
                 String.format(
@@ -60,11 +59,11 @@ public class TextBoxTest extends TestBase {
         String expectedCurrentAddress = "Gedimino str.";
         String actualCurrentAddress;
 
-        TestBoxPage.enterCurrentAddress(expectedCurrentAddress);
-        TestBoxPage.clickButtonSubmit();
-        actualCurrentAddress = TestBoxPage.readCurrentAddress();
+        TextBoxPage.enterCurrentAddress(expectedCurrentAddress);
+        TextBoxPage.clickButtonSubmit();
+        actualCurrentAddress = TextBoxPage.readCurrentAddress();
 
-        // TODO: wright all actions fro elements here
+
         Assert.assertTrue(
                 actualCurrentAddress.contains(expectedCurrentAddress),
                 String.format(

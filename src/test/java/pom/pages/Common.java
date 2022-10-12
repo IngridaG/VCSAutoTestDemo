@@ -2,18 +2,19 @@ package pom.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import pom.utils.Driver;
 
 public class Common {
-    public static void setUp() {
+    public static void setUpDriver() {
         Driver.setDriver();
     }
 
     public static void openUrl(String url) {
-        Driver.openUrl(url);
+        Driver.getDriver().get(url);
     }
 
-    public static void close() {
+    public static void closeDriver() {
         Driver.close();
     }
 
@@ -39,6 +40,13 @@ public class Common {
 
     public static String getElementText(By locator) {
         return getElement(locator).getText();
+    }
+
+    public static void selectOptionsByValue(By locator, String value) {
+        WebElement webElement = getElement(locator);
+        Select selectElement = new Select(webElement);
+        selectElement.selectByValue(value);
+
     }
 }
 

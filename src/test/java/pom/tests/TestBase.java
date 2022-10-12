@@ -2,18 +2,24 @@ package pom.tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pom.pages.seleniumEasy.FirstFormDemoPage;
+import org.testng.annotations.Listeners;
+import pom.pages.Common;
+import pom.utils.TestListener;
 
+@Listeners(TestListener.class)      // cias Listenerio testavimo tisklais
 public class TestBase {
 
     @BeforeMethod
     public void setUp() {
-        FirstFormDemoPage.setUp();
+//TestBoxPage
+//        FirstFormDemoPage.setUp();  //uz komentavom nes turim dvi svetaines,. Kai viena galima taip padaryti
+        Common.setUpDriver();
 
     }
 
     @AfterMethod
     public void tearDown() {
-        FirstFormDemoPage.close();
+        Common.closeDriver();
+//        FirstFormDemoPage.close();
     }
 }

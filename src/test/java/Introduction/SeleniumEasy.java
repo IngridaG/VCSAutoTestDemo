@@ -21,6 +21,7 @@ public class SeleniumEasy {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("window-size=2000,3000");
         options.addArguments("--force-device-scale-factor=0.75");
+
 //        options.addArguments("headless");   // kad testas vyktu backgrounde, neatidarytu narsykles - MAN VEIKIA SU SIUO METODU ENALBED
 
         driver = new ChromeDriver(options);
