@@ -33,6 +33,9 @@ public class Locators {      //lokatoriu dejimui kuriame inner klaseees lokatori
 
             public static By inputSingleCheckbox = By.xpath("//input[@id='isAgeSelected']");
             public static By divMessageText = By.xpath("//div[@id='txtAge']");
+
+            public static By buttonGroupCheckbox = By.xpath("//*[@id='check1']");
+            public static By inputMultipleCheckbox = By.xpath("//input[@class='cb1-element']");
         }
 
         public static class SelectDropDownDemo {

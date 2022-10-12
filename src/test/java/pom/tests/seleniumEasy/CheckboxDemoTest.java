@@ -31,4 +31,20 @@ public class CheckboxDemoTest extends TestBase {
 
 
     }
+
+    @Test
+    private void testMultipleCheckboxStatusWithCheckedAll() {
+        String expectedButtonText = "Uncheck All";
+        String actualButtonText = "";
+        boolean expectedCheckboxStatus = true;
+        boolean actualCheckboxStatus = false;
+
+        CheckboxDemoPage.clickButtonCheckAll();
+        actualButtonText = CheckboxDemoPage.readValueOfUncheckAllButton();
+
+        Assert.assertEquals(actualButtonText, expectedButtonText);
+        actualCheckboxStatus = CheckboxDemoPage.checkStatusesOfSelectedCheckboxes(expectedCheckboxStatus);
+
+        Assert.assertTrue(actualCheckboxStatus == expectedCheckboxStatus);
+    }
 }

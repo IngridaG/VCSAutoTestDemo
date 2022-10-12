@@ -3,6 +3,7 @@ package pom.tests.seleniumEasy;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import pom.pages.seleniumEasy.CheckboxDemoPage;
 import pom.pages.seleniumEasy.SelectDropdownDemoPage;
 import pom.tests.TestBase;
 
@@ -15,7 +16,7 @@ public class SelectDropdownDemoTest extends TestBase {
     }
 
     @Test
-    private void testSelectListDemo(){
+    private void testSelectListDemo() {
         String expectedWeekOfDay = "Tuesday";   //Tuesday
         String actualMessage = "";              // Day selected: - Tuesday
 
@@ -33,6 +34,10 @@ public class SelectDropdownDemoTest extends TestBase {
         );
     }
 
+
+}
+
+
 //    @Test
 //    private void testMultiSelectListDemo(){
 //        String expectedState = "Florida";
@@ -41,4 +46,4 @@ public class SelectDropdownDemoTest extends TestBase {
 //        SelectDropdownDemoPage.clickDayFromDropdown();
 //
 //    }
-}
+
